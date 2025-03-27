@@ -10,4 +10,4 @@ deployment:
     
 serviceAccount:
   annotations:
-    azure.workload.identity/client-id: "7f644391-4b27-4f76-8427-17bae90d7ee8"
+    azure.workload.identity/client-id: "your-id"

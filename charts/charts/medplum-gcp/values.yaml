@@ -7,3 +7,7 @@ ingress:
 
 certManager:
   enabled: true
+
+serviceAccount:
+  annotations:
+     iam.gke.io/gcp-service-account: medplum-server@$PROJECT_ID.iam.gserviceaccount.com
