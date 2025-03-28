@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 global: 
-  cloudProvider: "" # cloud providers options: "", gcp, azure 
+  cloudProvider: "gcp" # cloud providers options: "", gcp, azure 
   configSource:
     # Examples:
     # type: "env"
@@ -44,10 +44,10 @@ gcp:
   enabled: false
   
 azure:
-  enabled: true
+  enabled: false
 
 certManager:
-  enabled: false
+  enabled: true
   namespace: cert-manager
   clusterIssuer:
     name: "letsencrypt-test"
@@ -55,4 +55,4 @@ certManager:
   certificate:
     name: "medplum-cert"
   ingress:
-    hosts: "- api.azure.medplum.dev"
+    hosts: "- api.zencore.medplum.dev"
