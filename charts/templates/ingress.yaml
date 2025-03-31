@@ -10,7 +10,9 @@ metadata:
     {{- if eq .Values.global.cloudProvider "gcp" }}
     ingressClassName: "gce"
     kubernetes.io/ingress.global-static-ip-name: medplum-external-ip
+    {{if (eq (toString .Values.certManager.enabled) "false") }}
     networking.gke.io/managed-certificates: {{ include "medplum.fullname" . }}
+    {{- end }}
     networking.gke.io/v1beta1.FrontendConfig: {{ include "medplum.fullname" . }}
     {{- end }}
 spec:
